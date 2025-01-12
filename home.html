@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LudoGame</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="box">
+        <div class="user1 player" id="blue-player">
+            <div class="coin-place blue">
+                <div class="coin" player-id="p1" coin-number="0" style="background-color: blue;"></div>
+            </div>
+            <div class="coin-place blue">
+                <div class="coin" player-id="p1" coin-number="1" style="background-color: blue;"></div>
+            </div>
+            <div class="coin-place blue">
+                <div class="coin" player-id="p1" coin-number="2" style="background-color: blue;"></div>
+            </div>
+            <div class="coin-place blue">
+                <div class="coin" player-id="p1" coin-number="3" style="background-color: blue;"></div>
+            </div>    
+        </div>
+        <div class="user2 player" id="yellow-player">
+            <div class="coin-place yellow">
+                <div class="coin" player-id="p2" coin-number="0" style="background-color: yellow;"></div>
+            </div>
+            <div class="coin-place yellow">
+                <div class="coin" player-id="p2" coin-number="1" style="background-color: yellow;"></div>
+            </div>
+            <div class="coin-place yellow">
+                <div class="coin" player-id="p2" coin-number="2" style="background-color: yellow;"></div>
+            </div>
+            <div class="coin-place yellow">
+                <div class="coin" player-id="p2" coin-number="3" style="background-color: yellow;"></div>
+            </div>  
+        </div>
+        <div class="user3 player" id="green-player">
+            <div class="coin-place green">
+                <div class="coin" player-id="p3" coin-number="0" style="background-color: green;"></div>
+            </div>
+            <div class="coin-place green">
+                <div class="coin" player-id="p3" coin-number="1" style="background-color: green;"></div>
+            </div>
+            <div class="coin-place green">
+                <div class="coin" player-id="p3" coin-number="2" style="background-color: green;"></div>
+            </div>
+            <div class="coin-place green">
+                <div class="coin" player-id="p3" coin-number="3" style="background-color: green;"></div>
+            </div> 
+        </div>
+        <div class="user4 player" id="red-player">
+            <div class="coin-place red">
+                <div class="coin" player-id="p4" coin-number="0" style="background-color: red;"></div>
+            </div>
+            <div class="coin-place red">
+                <div class="coin" player-id="p4" coin-number="1" style="background-color: red;"></div>
+            </div>
+            <div class="coin-place red">
+                <div class="coin" player-id="p4" coin-number="2" style="background-color: red;"></div>
+            </div>
+            <div class="coin-place red">
+                <div class="coin" player-id="p4" coin-number="3" style="background-color: red;"></div>
+            </div> 
+        </div>
+
+        <div class="cell-container1">
+            <div class="cell" id="b11"></div>
+            <div class="cell" id="b12" style="font-size: 25px; text-align: center; color: yellow;">&#8681</div>
+            <div class="cell" id="b13"></div>
+            <div class="cell" id="b10"></div>
+            <div class="cell" id="yh1" style="background-color: yellow;"></div>
+            <div class="cell" id="y1" style="background-color: yellow;"></div>
+            <div class="cell" id="b9" style="background-color: gray;"></div>
+            <div class="cell" id="yh2" style="background-color: yellow;"></div>
+            <div class="cell" id="y2"></div>
+            <div class="cell" id="b8"></div>
+            <div class="cell" id="yh3" style="background-color: yellow;"></div>
+            <div class="cell" id="y3"></div>
+            <div class="cell" id="b7"></div>
+            <div class="cell" id="yh4" style="background-color: yellow;"></div>
+            <div class="cell" id="y4"></div>
+            <div class="cell" id="b6"></div>
+            <div class="cell" id="yh5" style="background-color: yellow;"></div>
+            <div class="cell" id="y5"></div>
+            <div class="triangle-down"></div>
+        </div>
+        <div class="cell-container2">
+            <div class="cell" id="g13"></div>
+            <div class="cell" id="b1" style="background-color: blue;"></div>
+            <div class="cell" id="b2"></div>
+            <div class="cell" id="b3"></div>
+            <div class="cell" id="b4"></div>
+            <div class="cell" id="b5"></div>
+            <div class="cell" id="g12" style="font-size: 25px; text-align: center; color: blue;">&#8680</div>
+            <div class="cell" id="bh1" style="background-color: blue;"></div>
+            <div class="cell" id="bh2" style="background-color: blue;"></div>
+            <div class="cell" id="bh3" style="background-color: blue;"></div>
+            <div class="cell" id="bh4" style="background-color: blue;"></div>
+            <div class="cell" id="bh5" style="background-color: blue;"></div>
+            <div class="cell" id="g11"></div>
+            <div class="cell" id="g10"></div>
+            <div class="cell" id="g9" style="background-color: gray;"></div>
+            <div class="cell" id="g8"></div>
+            <div class="cell" id="g7"></div>
+            <div class="cell" id="g6"></div>
+            <div class="triangle-right"></div>
+        </div>
+        <div class="cell-container3">
+            <div class="triangle-up"></div>
+            <div class="cell" id="g5"></div>
+            <div class="cell" id="gh5" style="background-color: green;"></div>
+            <div class="cell" id="r6"></div>
+            <div class="cell" id="g4"></div>
+            <div class="cell" id="gh4" style="background-color: green;"></div>
+            <div class="cell" id="r7"></div>
+            <div class="cell" id="g3"></div>
+            <div class="cell" id="gh3" style="background-color: green;"></div>
+            <div class="cell" id="r8"></div>
+            <div class="cell" id="g2"></div>
+            <div class="cell" id="gh2" style="background-color: green;"></div>
+            <div class="cell" id="r9" style="background-color: gray;"></div>
+            <div class="cell" id="g1" style="background-color: green;"></div>
+            <div class="cell" id="gh1" style="background-color: green;"></div>
+            <div class="cell" id="r10"></div>
+            <div class="cell" id="r13"></div>
+            <div class="cell" id="r12" style="font-size: 25px; text-align: center; color: green;">&#8679</div>
+            <div class="cell" id="r11"></div>
+        </div>
+        <div class="cell-container4">
+            <div class="triangle-left"></div>
+            <div class="cell" id="y6"></div>
+            <div class="cell" id="y7"></div>
+            <div class="cell" id="y8"></div>
+            <div class="cell" id="y9" style="background-color: gray;"></div>
+            <div class="cell" id="y10"></div>
+            <div class="cell" id="y11"></div>
+            <div class="cell" id="rh5" style="background-color: red;"></div>
+            <div class="cell" id="rh4" style="background-color: red;"></div>
+            <div class="cell" id="rh3" style="background-color: red;"></div>
+            <div class="cell" id="rh2" style="background-color: red;"></div>
+            <div class="cell" id="rh1" style="background-color: red;"></div>
+            <div class="cell" id="y12" style="font-size: 25px; text-align: center; color: red;">&#8678</div>
+            <div class="cell" id="r5"></div>
+            <div class="cell" id="r4"></div>
+            <div class="cell" id="r3"></div>
+            <div class="cell" id="r2"></div>
+            <div class="cell" id="r1" style="background-color: red;"></div>
+            <div class="cell" id="y13"></div>
+        </div>
+
+        
+
+    </div>
+    <div class="results">
+        <!-- Button to roll the dice -->
+        <button id="dice-btn" class="dice-btn btn">ROLL</button>
+    
+        <!-- Container for dice and its value -->
+        <div class="dice-container">
+            <!-- The area where the dice value will be shown (image or text) -->
+            <div class="dice-value"></div>
+        </div>
+    
+        <!-- Button to reset the game -->
+        <button id="reset-btn" class="reset-btn btn">Reset</button>
+    </div>
+    
+    
+    <h2 class="active-player">Active Player: <span></span></h2>
+
+    
+
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Selection</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <div class="player-selection-container">
+        <h1>Select the number of players</h1>
+        <form id="player-form">
+            <label for="player-count">Number of players: </label>
+            <select id="player-count" name="player-count">
+                <option value="2">2 Players</option>
+                <option value="3">3 Players</option>
+                <option value="4" selected>4 Players</option>
+            </select>
+            <button type="submit">Start Game</button>
+        </form>
+    </div>
+
+    <script src="player-selection.js"></script>
+</body>
+</html>
