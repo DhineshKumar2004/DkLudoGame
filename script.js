@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             highlightCoinsForCurrentPlayer();
             
             if(diceValue === 6){
-                // rolled = false;
+                rolled = false;
             }else{
                 return;
             }
