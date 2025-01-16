@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentPlayerIndex = 0;
     let diceValue = 0;
     let rolled = false;
+    let isKilled = false;
 
     const diceImages = [
         'images/dice-1.png',
@@ -64,14 +65,13 @@ document.addEventListener('DOMContentLoaded', () => {
             highlightCurrentPlayer();
             highlightCoinsForCurrentPlayer();
             
-            
+            if(diceValue === 6){
+                rolled = false;
+            }else{
+                return;
+            }
         }, 1000); // After 1 second, stop animation and show result
-        if(diceValue === 6){
-            
-            endTurn();
-        }else{
-            return;
-        }
+        
         
         rolled = true;
     };
@@ -168,6 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const initialPlace = document.querySelector(`.coin-place.${player}:nth-child(${parseInt(coin.getAttribute('coin-number')) + 1})`);
         
         initialPlace.appendChild(coin);
+        isKilled =true;
     };
 
     const endTurn = () => {
@@ -175,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
         rolled= false;
         cleanupListeners();
 
-        if(diceValue !==6){
+        if(diceValue !==6 && !isKilled){
             // Skip disabled players
             let nextPlayerIndex = (currentPlayerIndex + 1) % numPlayers;
 
@@ -190,13 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
             activePlayerDisplay.textContent = players[currentPlayerIndex].toUpperCase();
             highlightCurrentPlayer();
         }
-        else{
-            const result = document.querySelector(".results");
-            const anotherChance = document.createElement('p');
-            anotherChance.classList.add("another-chance")
-            anotherChance.innerHTML = "You have got another chance";
-            result.appendChild(anotherChance);
-        }
+        isKilled= false;
     };
 
     //chnages
