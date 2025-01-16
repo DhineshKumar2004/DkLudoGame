@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let currentPlayerIndex = 0;
     let diceValue = 0;
+    let rolled = false;
 
     const diceImages = [
         'images/dice-1.png',
@@ -46,6 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const numPlayers = parseInt(localStorage.getItem('numPlayers') || 4);
 
     const rollDice = () => {
+        if (rolled) {
+            alert('You must move a coin before rolling again!');
+            return;
+        }
         const diceImage = document.createElement('div');
         diceImage.classList.add('dice-image', 'dice-rolling');
         diceContainer.innerHTML = ''; // Clear previous dice
@@ -58,7 +63,17 @@ document.addEventListener('DOMContentLoaded', () => {
             diceValueDisplay.textContent = `You rolled: ${diceValue}`;
             highlightCurrentPlayer();
             highlightCoinsForCurrentPlayer();
+            
+            
         }, 1000); // After 1 second, stop animation and show result
+        if(diceValue === 6){
+            
+            endTurn();
+        }else{
+            return;
+        }
+        
+        rolled = true;
     };
 
     const highlightCurrentPlayer = () => {
@@ -156,20 +171,32 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const endTurn = () => {
+        
+        rolled= false;
         cleanupListeners();
-        // Skip disabled players
-        let nextPlayerIndex = (currentPlayerIndex + 1) % numPlayers;
 
-        // Check if the next player is disabled
-        while (nextPlayerIndex >= numPlayers) {
-            nextPlayerIndex = (nextPlayerIndex + 1) % numPlayers; // Skip over disabled players
+        if(diceValue !==6){
+            // Skip disabled players
+            let nextPlayerIndex = (currentPlayerIndex + 1) % numPlayers;
+
+            // Check if the next player is disabled
+            while (nextPlayerIndex >= numPlayers) {
+                nextPlayerIndex = (nextPlayerIndex + 1) % numPlayers; // Skip over disabled players
+            }
+
+        // Set the new current player
+            currentPlayerIndex = nextPlayerIndex;
+            diceValueDisplay.textContent = '';
+            activePlayerDisplay.textContent = players[currentPlayerIndex].toUpperCase();
+            highlightCurrentPlayer();
         }
-
-    // Set the new current player
-    currentPlayerIndex = nextPlayerIndex;
-        diceValueDisplay.textContent = '';
-        activePlayerDisplay.textContent = players[currentPlayerIndex].toUpperCase();
-        highlightCurrentPlayer();
+        else{
+            const result = document.querySelector(".results");
+            const anotherChance = document.createElement('p');
+            anotherChance.classList.add("another-chance")
+            anotherChance.innerHTML = "You have got another chance";
+            result.appendChild(anotherChance);
+        }
     };
 
     //chnages
