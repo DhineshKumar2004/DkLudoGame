@@ -62,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const highlightCurrentPlayer = () => {
+        
         playerAreas.forEach((area, index) => {
             //changes
             if (index >= numPlayers) {
@@ -98,8 +99,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const player = players[currentPlayerIndex];
         const path = paths[player];
         const currentCellId = coin.parentElement.id;
+
+        
+
         const currentIndex = path.indexOf(currentCellId);
+        
         const targetIndex = currentIndex + diceValue;
+        
 
         if (targetIndex < path.length) {
             stepByStepMove(coin, path, currentIndex, targetIndex);
@@ -141,8 +147,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const sendCoinHome = (coin) => {
         const playerId = coin.getAttribute('player-id');
+        
         const player = players[parseInt(playerId.slice(1)) - 1];
+        
         const initialPlace = document.querySelector(`.coin-place.${player}:nth-child(${parseInt(coin.getAttribute('coin-number')) + 1})`);
+        
         initialPlace.appendChild(coin);
     };
 
