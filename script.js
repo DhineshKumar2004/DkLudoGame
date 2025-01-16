@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const activePlayerDisplay = document.querySelector('.active-player span');
     const playerAreas = document.querySelectorAll('.player');
 
-    const players = ['blue', 'yellow', 'green', 'red'];
+    const players = ['blue', 'yellow', 'red', 'green'];
     const paths = {
         blue: ['b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'b8', 'b9', 'b10', 'b11', 'b12', 'b13',
                'y1', 'y2', 'y3', 'y4', 'y5', 'y6', 'y7', 'y8', 'y9', 'y10', 'y11', 'y12', 'y13',
